@@ -38,82 +38,115 @@
 
 12 - Ver os Logs dos commits realizados
      git Logs
+     
+13 - Ver uma Determinada quantidade de registros do log
+     git log -n [quantidade de registrosno log]
+     ex git log -n 2
+     
+14 - Comparar as modificações nos arquivos alterados com os arquivos que foram commitado anteriormente
+     git diff
+     
+14 - Comparar as modificações no arquivos alterados com os arquivos que foram commitado anteriormente
+     git diff 
 
-13 - Alterando nome de um arquivo 
+     
+14 - Comparar as modificações de um arquivo alterado com o arquivo que foi commitado anteriormente
+     git diff [nome-do-arquivo]
+     git diff index.html
+     
+14 - Comparar as modificações de um arquivo alterado na area de stage com o arquivo que foi commitado anteriormente
+     git diff [nome-do-arquivo]
+     git diff index.html
+
+15 - Alterando nome de um arquivo 
      git mv [nome-do-arquivo]
      git mv Pessoa.java Cliente.java
 
-14 - Movendo arquivos para outra pasta
+16 - Movendo arquivos para outra pasta
      git mv [nome-do-arquivo] [pasta/nome-do-arquivo]
      git mv Pessoa.java /entidade/Pessoa.java
 
-15 - Desfazendo as mudaças feitas em um arquivo
+17 - Desfazendo as mudaças feitas em um arquivo
      git checkout [nome-do-arquivo]
      ex: git checkout index.html
 
-16 - Visualizando as branchs disponiveis
+18 - Visualizando as branchs disponiveis
      git branch
 
-17 - Criando uma nova branch 
+19 - Criando uma nova branch 
      git branch [nome-da-branch]
      ex: git branch crud_cliente
      OBS: Antes de fazer esse comando tenha sempre certeza que vc esta na branch main
           depois de o comando git pull, depois de fazer esses passos vc pode criar
           uma nova branch
 
-18 - Resetando mudanças feitas tanto em arquivos commitados e arquivos não commitados
+20 - Resetando mudanças feitas tanto em arquivos commitados e arquivos não commitados
      git reset --hard [branch]
      ex: git reset --hard origin/main
 
-19 - Deletando um branch
+21 - Deletando um branch
      git branch -d [nome-da-branch]
      ex: git branch -d crud_cliente 
     
-20 - Mudando de branch
+22 - Mudando de branch
      git checkout [nome-da-branch]
      ex: git checlout crud_cliente
 
-21 - Criando e mudando de branch
+23 - Criando e mudando de branch
      git checkout -b [nome-da-branch]
      ex: git checkout -b crud_cliente
      OBS: Antes de fazer esse comando tenha sempre certeza que vc esta na branch main
-           depois de o comando git pull, depois de fazer esses passos vc pode criar
-           uma nova branch
+          depois de o comando git pull, depois de fazer esses passos vc pode criar
+          uma nova branch
 
-22 - Fazer merge de branch
+24 - Fazer merge de branch
      git merge [nome-da-branch]
      git merge crud_cliente
      OBS: Tenha certeza que voçê esta na branch main
 
-24 - Salvar o codigo aual para prosseguir em uma nova abordagem
+25 - Salvar o codigo aual para prosseguir em uma nova abordagem
      git stash
      
-25 - Listando as stashs
+26 - Listando as stashs
      git list stash
      
-26 - Recuperando uma stash 
+27 - Recuperando uma stash 
      git stash apply [numero-da-stash]
      ex: git stash apply 0
      
-27 - Observar as modificações que foram feitas na stash
+28 - Observar as modificações que foram feitas na stash
      git stash show -p [numero-da-stash]
      ex: git stash show -p 1
 
-28 - Remover todas as stashs 
+29 - Remover todas as stashs 
      git stash clear
      
-29 - Remover uma stash especifíca
+30 - Remover uma stash especifíca
      git stash drop [numero-dastash]
      git stash drop 1
      
-30 - Criando uma tag
+31 - Criando uma tag
      git tag -a [nome-da-tag] -m "[menssagem]"
      ex: git tag -a v1.0 -m "Primeira versao"
      OBS: Commitar a tag em seguencia
      
-31 - Ver as Tags existentes
+32 - Ver as Tags existentes
      git tag
      
-32 - Mudar de tag
+33 - Mudar de tag
      git checkout [nome-da-tag]
      ex: git checkout v2.0
+     
+34 - Enviar uma tag para o repositorio
+     git push origin [nome-da-tag]
+     ex: git push origin v3.0
+     
+35 - Enviando todas as tags
+     git push origin --tags
+     
+36 - Enviando branch para ser compartilhada
+     git push --set-upstream origin [nome-da-funcionalidade]
+     git push --set-upstream origin funcionalidade_a 
+     
+37 - Buscando todos os branchs remotos
+     git fetch -a
