@@ -36,6 +36,10 @@
      git rm [nome-do-arquivo]
      ex: git rm Cliente.java
 
+11 - Recuperando arquivos deletados
+     1 - git reset HEAD
+     2 - git checkout -- .
+
 12 - Ver os Logs dos commits realizados
      git Logs
      
@@ -58,6 +62,26 @@
      git diff [nome-do-arquivo]
      git diff index.html
 
+14 - Comparar as modificações de um arquivo alterado dentro e fora da area de stage com o arquivo que foi commitado anteriormente
+     git diff HEAD
+
+14 - Comparar as modificações entre dois commits
+     git diff [codigo-hexadecimal]..[codigo-hexadecimal]
+     ex: git diff 7eabc89..e3077c1
+
+14 - Desfazendo mudanças em um arquivo rastreado, retirando ele da area de stage e preservando arquivo modificado
+     git reset -- index.html
+
+14 - Desfazendo mudanças em todos os arquivos na area de stage 
+     git reset --hard
+
+14 - Desfazendo mudanças em arquivo já commitado
+     git revert --no-edit [codigo-do-commit]
+     ex: git revert --no-edit 6111116
+
+14 - Vendo o codigo de todos os commits, os pais de todos os commits e a menssagem de todos os commits
+     git log --oneline --decorate --parents
+
 15 - Alterando nome de um arquivo 
      git mv [nome-do-arquivo]
      git mv Pessoa.java Cliente.java
@@ -66,12 +90,19 @@
      git mv [nome-do-arquivo] [pasta/nome-do-arquivo]
      git mv Pessoa.java /entidade/Pessoa.java
 
+20 - Resetando mudanças feitas tanto em arquivos commitados e arquivos não commitados
+     git reset --hard [branch]
+     ex: git reset --hard origin/main
+
 17 - Desfazendo as mudaças feitas em um arquivo
      git checkout [nome-do-arquivo]
-     ex: git checkout index.html
+     ex: git checkout -- index.html
 
 18 - Visualizando as branchs disponiveis
      git branch
+
+18 - Visualizando as branchs disponiveis com mais informações
+     git branch -v
 
 19 - Criando uma nova branch 
      git branch [nome-da-branch]
@@ -80,17 +111,17 @@
           depois de o comando git pull, depois de fazer esses passos vc pode criar
           uma nova branch
 
-20 - Resetando mudanças feitas tanto em arquivos commitados e arquivos não commitados
-     git reset --hard [branch]
-     ex: git reset --hard origin/main
-
-21 - Deletando um branch
+21 - Deletando um branch sem commit
      git branch -d [nome-da-branch]
      ex: git branch -d crud_cliente 
+
+21 - Deletando um branch com commit
+     git branch -D [nome-da-branch]
+     ex: git branch -D crud_cliente 
     
 22 - Mudando de branch
      git checkout [nome-da-branch]
-     ex: git checlout crud_cliente
+     ex: git checkout crud_cliente
 
 23 - Criando e mudando de branch
      git checkout -b [nome-da-branch]
@@ -99,10 +130,29 @@
           depois de o comando git pull, depois de fazer esses passos vc pode criar
           uma nova branch
 
+23 - Verificar branchs que não fizeram merge com a branch master
+     git branch --no-merged
+
+23 - Verificar branchs que já fizeram merge com a branch master
+     git branch --merged
+
 24 - Fazer merge de branch
-     git merge [nome-da-branch]
-     git merge crud_cliente
+     git merge [nome-da-branch] -m "menssagem"
+     git merge crud_cliente -m "Mesclando com a branch master"
      OBS: Tenha certeza que voçê esta na branch main
+
+25 - Mostrar as branchs remotas
+     git branch -r
+
+25 - Ver para quais commits as branchs remotas apontam
+     git branch -r -v
+
+25 - Mostrar as branchs remotas e locais
+     git branch -a
+
+25 - Compartilhando branchs
+     git push [remota] [local]
+     git push origin design
 
 25 - Salvar o codigo aual para prosseguir em uma nova abordagem
      git stash
