@@ -154,6 +154,23 @@
      git push [remota] [local]
      git push origin design
 
+25 - Buscando, criando e mudando para uma branch local criada atraves de uma branch remota
+     git checkout -b [nome-que-vai-ser-dado-a-branch] origin/[nome-da-branch-remota]
+     ex: git checkout -b design origin/design
+
+25 - Buscando, criando e mudando para uma branch local criada atraves de uma branch remota com o mesmo nome da branch remota, 
+     git checkout -t origin/[nome-da-branch-remota]
+     ex: git checkout -t origin/design
+
+25 - Fazendo merge de uma branch remota com uma branch local, ou seja, estamos buscando as codigo da branch remota que nao tem na branch local
+     git merge origin/[nome-da-branch] -m "menssagem"
+     ex: git merge origin/master -m "Mesclando origin/master em master"
+
+25 - Deletando uma branch remota
+     1 - Delete a branch local
+     2 - git push origin :[nome-da-branch]
+         ex: git push origin :design
+
 25 - Salvar o codigo aual para prosseguir em uma nova abordagem
      git stash
      
@@ -186,12 +203,15 @@
 33 - Mudar de tag
      git checkout [nome-da-tag]
      ex: git checkout v2.0
+
+33 - Criando uma tag para um commit passado
+     git tag [nome-da-tag] [codigo-hash]
      
 34 - Enviar uma tag para o repositorio
      git push origin [nome-da-tag]
      ex: git push origin v3.0
      
-35 - Enviando todas as tags
+35 - Enviando todas as tags para o repositório
      git push origin --tags
      
 36 - Enviando branch para ser compartilhada
